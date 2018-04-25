@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Database\Capsule\Manager;//数据库管理类
 
 //调用自动加载文件，添加自动加载文件函数
 require __DIR__ . '/../vendor/autoload.php';
@@ -9,6 +10,11 @@ $app = new Illuminate\Container\Container;
 
 with(new Illuminate\Events\EventServiceProvider($app))->register();
 with(new Illuminate\Routing\RoutingServiceProvider($app))->register();
+
+//启动 Eloquent ORM模块并进行相关配置
+$manager = new Manager();
+$manager->addConnection(require '../config/databases.php');
+$manager->bootEloquent();
 
 //加载路由
 require __DIR__ . '/../app/Http/routes.php';
