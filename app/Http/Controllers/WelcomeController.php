@@ -6,6 +6,7 @@ use App\Models\Student;
 
 class WelcomeController
 {
+
     public function index()
     {
         $student = Student::first();
