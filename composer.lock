@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aff4a94638ca065a4ef76bcefcf7c17",
+    "content-hash": "363624f9fecfd8e6b1ca56df3ceafe58",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -567,6 +567,54 @@
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
             "time": "2018-03-10T15:44:32+00:00"
+        },
+        {
+            "name": "illuminate/view",
+            "version": "v5.5.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/view.git",
+                "reference": "59a62ae587caef2cbbf3daec35f852e603eff998"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/59a62ae587caef2cbbf3daec35f852e603eff998",
+                "reference": "59a62ae587caef2cbbf3daec35f852e603eff998",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.5.*",
+                "illuminate/contracts": "5.5.*",
+                "illuminate/events": "5.5.*",
+                "illuminate/filesystem": "5.5.*",
+                "illuminate/support": "5.5.*",
+                "php": ">=7.0",
+                "symfony/debug": "~3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\View\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate View package.",
+            "homepage": "https://laravel.com",
+            "time": "2018-03-24T14:41:33+00:00"
         },
         {
             "name": "nesbot/carbon",
