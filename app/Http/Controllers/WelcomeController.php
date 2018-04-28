@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use Illuminate\Container\Container;
 
 class WelcomeController
 {
@@ -13,6 +14,10 @@ class WelcomeController
 
         $data = $student->getAttributes();
 
-        return "学生 id = {$data['id']}; 学生 name = {$data['name']}; 学生 age = {$data['age']}";
+        $app = Container::getInstance();
+        $factory = $app->make('view');
+        return $factory->make('welcome')->with('data', $data);
+
+        //return "学生 id = {$data['id']}; 学生 name = {$data['name']}; 学生 age = {$data['age']}";
     }
 }

@@ -18,7 +18,11 @@ $manager = new Manager();
 $manager->addConnection(require '../config/databases.php');
 $manager->bootEloquent();
 $app->instance('config', new Fluent);
-$app['config']['view.compiled'] = __DIR__ . "/../storage/Http/routes.php";
+
+$app['config']['view.compiled'] = realpath('..') . '/storage/views/';
+$app['config']['view.paths'] = realpath('..') . '/resources/views/';
+with(new Illuminate\View\ViewServiceProvider($app))->register();
+with(new Illuminate\Filesystem\FilesystemServiceProvider($app))->register();
 
 //加载路由
 require __DIR__ . '/../app/Http/routes.php';
