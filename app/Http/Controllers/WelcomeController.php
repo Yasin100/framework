@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use Illuminate\Container\Container;
 
 class WelcomeController
 {
-
     public function index()
     {
-        $student = Student::first();
-
+        $student = Student::find(1);
         $data = $student->getAttributes();
 
-        return "学生 id = {$data['id']}; 学生 name = {$data['name']}; 学生 age = {$data['age']}";
+        $app = Container::getInstance();//获取服务容器实例
+        $factory = $app->make('view');
+        return $factory->make('welcome')->with('data', $data);
     }
 }

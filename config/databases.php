@@ -3,9 +3,9 @@
 return [
     'driver' => 'mysql',
     'host' => 'localhost',
-    'database' => 'blog',
+    'database' => 'framework',
     'username' => 'root',
-    'password' => '',
+    'password' => 'root',
     'charset' => 'utf8',
     'collation' => 'utf8_general_ci',
     'prefix' => '',
