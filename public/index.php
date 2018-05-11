@@ -21,7 +21,8 @@ $app->instance('config', new Fluent);
 
 //__DIR__ . '\..\views\\'
 $app['config']['view.compiled'] = "D:\\wnmp\\PHPTutorial\\WWW\\framework\\storage\\framework\\views\\";
-$app['config']['view.paths'] = ["D:\\wnmp\\PHPTutorial\\WWW\\framework\\resources\\views\\"];
+//$app['config']['view.paths'] = ["D:\\wnmp\\PHPTutorial\\WWW\\framework\\resources\\views\\"];
+$app['config']['view.paths'] = [__DIR__ . "\\..\\resources\\views\\"];
 with(new Illuminate\View\ViewServiceProvider($app))->register();
 with(new Illuminate\Filesystem\FilesystemServiceProvider($app))->register();
 
